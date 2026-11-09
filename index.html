@@ -71,9 +71,8 @@ h2.t{font-size:clamp(2.2rem,6vw,3.2rem);text-align:center;font-style:italic}
 .tl em{font-style:normal;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
 .tl h3{font-size:1.7rem;font-style:italic}.tl p{margin:2px 0 0;color:var(--soft)}
 /* gallery */
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.gallery figure{margin:0;border-radius:18px;overflow:hidden;position:relative;aspect-ratio:4/5;background:linear-gradient(135deg,rgba(233,160,174,.35),rgba(232,196,143,.35));border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .25s ease;transform-style:preserve-3d;display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--soft);font-size:.8rem}
-.gallery figure:nth-child(even){aspect-ratio:1}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.gallery figure{margin:0;border-radius:18px;overflow:hidden;position:relative;aspect-ratio:1;background:linear-gradient(135deg,rgba(233,160,174,.35),rgba(232,196,143,.35));border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .25s ease;transform-style:preserve-3d;display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--soft);font-size:.8rem}
 .gallery figure.has{cursor:zoom-in}
 .gallery figure .ph{font-size:2rem;color:var(--accent);opacity:.6}
 .gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
@@ -159,32 +158,70 @@ footer{text-align:center;color:var(--soft);padding:50px 24px 70px;font-size:.85r
 <script>
 /* ============ EDIT YOUR CONTENT HERE ============ */
 var CONFIG = {
-  her: "Shaza",
-  you: "Omar",
-  start: "2022-11-08",
-  anniversary: "8 November 2026",
-  met: {
-    where: "University",
-    when: "Oct-25th-2026",
-    paragraphs: 
-      " The day I met you was the day my life changed forever. Who would've thought that we could end up here together after 4 years so inlove and cant imagine life without each other."
-    
+ "her": "Shaza",
+ "you": "Omar",
+ "start": "2022-11-08",
+ "anniversary": "8 November 2026",
+ "met": {
+  "where": "University",
+  "when": "Oct-25th-2026",
+  "paragraphs": [
+   "The day I met you was the day my life changed forever. Who would’ve thought that we could end up here together after 4 years so inlove and cant imagine life without each other."
+  ]
+ },
+ "moments": [
+  {
+   "date": "Everyday",
+   "title": "Everywhere",
+   "text": "Everytime I’m out with you I still get the same feeling as the first time we went out together."
   },
-  moments: [
-    {date: "Everyday", title: "Everywhere", text: "Everytime I'm out with you I still get the same feeling as the first time we went out together."},
-    {date: "Beach dates", title: "Every night beach date", text: "It's always my fav place to spend time with you. We're all alone and have you in my arms is the best feeling anyone could ask for."},
-    {date: "Future Dates", title: "Seeing your face everyday", text: "I always look forward to seeing you everyday and I physically can't get enough of you."},
-    {date: "8 November 2026", title: "Four years", text: "Happy anniversary my beautiful babyyyyyyyy."}
-  ],
-  /* src: a photo path like "photos/us1.jpg" or a data: URI. Leave "" for a placeholder. */
-  photos: [
-    {src: "", caption: "[Caption]"}, {src: "", caption: "[Caption]"}, {src: "", caption: "[Caption]"},
-    {src: "", caption: "[Caption]"}, {src: "", caption: "[Caption]"}, {src: "", caption: "[Caption]"}
-  ],
-  reasons: [
-    "You're the kindest soul (only for me)", "You're the sexiest ever", "The most beautiful and thoughtful girl in the world", "The smartest and most hardworking", "You make me feel like I'm the most special person to you", "How can we forget about that body mmmmm"
-  ],
-  letter: "My baby,\n\nYou mean the worldddd to me and I love you so greatly much, the past 4 years with you taught me patience and how to love you, and it has been the easiest thing that I have learned. The way you look at me makes me the luckiest person on this planet and I'm pretty sure I'm addicted to this feeling so you'll have to keep doing this every single day cuz you're stuck with me forever. I can't wait to spend the rest of my life with someone that I not only love sooo much, but also being in love with my bestfriend is what makes it so special. To 1000 years of being happy together.]\n\nHappy anniversary.\n\nForever yours,\nYour love"
+  {
+   "date": "Beach dates",
+   "title": "Every night beach date",
+   "text": "It’s always my fav place to spend time with you. We’re all alone and have you in my arms is the best feeling anyone could ask for."
+  },
+  {
+   "date": "Future Dates",
+   "title": "Seeing your face everyday",
+   "text": "I always look forward to seeing you everyday and I physically can’t get enough of you."
+  },
+  {
+   "date": "8 November 2026",
+   "title": "Four years",
+   "text": "Happy anniversary my beautiful babyyyyyyyy."
+  }
+ ],
+ "photos": [
+  {
+   "src": "photos/us1.jpg",
+   "caption": "Late nights with you",
+   "pos": "40% 40%"
+  },
+  {
+   "src": "photos/us2.jpg",
+   "caption": "Matching, as always",
+   "pos": "50% 40%"
+  },
+  {
+   "src": "photos/us3.jpg",
+   "caption": "Graduation day",
+   "pos": "50% 22%"
+  },
+  {
+   "src": "photos/us4.jpg",
+   "caption": "Our beach nights",
+   "pos": "62% 50%"
+  }
+ ],
+ "reasons": [
+  "You’re the kindest soul (only for me)",
+  "You’re the sexiest ever",
+  "The most beautiful and thoughtful girl in the world",
+  "The smartest and most hardworking",
+  "You make me feel like I’m the most special person to you",
+  "How can we forget about that body mmmmm"
+ ],
+ "letter": "My baby,\n\nYou mean the worldddd to me and I love you so greatly much, the past 4 years with you taught me patience and how to love you, and it has been the easiest thing that I have learned. The way you look at me makes me the luckiest person on this planet and I’m pretty sure I’m addicted to this feeling so you’ll have to keep doing this every single day cuz you’re stuck with me forever. I can’t wait to spend the rest of my life with someone that I not only love sooo much, but also being in love with my bestfriend is what makes it so special. To 1000 years of being happy together.\n\nHappy anniversary.\n\nForever yours,\nYour love"
 };
 /* ================================================ */
 
@@ -196,7 +233,7 @@ function el(t, c, h){var e = document.createElement(t); if(c) e.className = c; i
 /* text */
 $("#gName").textContent = C.her;
 $("#forHer").textContent = "For " + C.her + ", with all my love";
-$("#range").textContent = "8 November 2022 – " + C.anniversary;
+$("#range").textContent = new Date(+C.start.split("-")[0], +C.start.split("-")[1] - 1, +C.start.split("-")[2]).toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"}) + " – " + C.anniversary;
 $("#foot").textContent = "Made with love by " + C.you + " · " + C.anniversary;
 function split(node, text, off){
   text.split("").forEach(function(ch, i){
@@ -205,7 +242,7 @@ function split(node, text, off){
 }
 split($("#l1"), "Four years", 0); split($("#l2"), "of us", 10);
 $("#meta").innerHTML = "<span>📍 " + C.met.where + "</span><span>📅 " + C.met.when + "</span>";
-C.met.paragraphs.forEach(function(p){ $("#storyText").appendChild(el("p", "", p)) });
+[].concat(C.met.paragraphs).forEach(function(p){ $("#storyText").appendChild(el("p", "", p)) });
 
 C.moments.forEach(function(m, i){
   var d = el("div", "tl reveal", "<em>" + m.date + "</em><h3>" + m.title + "</h3><p>" + m.text + "</p>");
@@ -216,7 +253,7 @@ var lb = $("#lb");
 C.photos.forEach(function(p, i){
   var f = el("figure", "reveal" + (p.src ? " has" : ""));
   f.style.setProperty("--d", (i % 3) * .12 + "s");
-  if(p.src){ var im = el("img"); im.src = p.src; im.alt = p.caption; im.loading = "lazy"; f.appendChild(im);
+  if(p.src){ var im = el("img"); im.src = p.src; im.alt = p.caption; im.loading = "lazy"; im.style.objectPosition = p.pos || "center"; f.appendChild(im);
     f.onclick = function(){ lb.querySelector("img").src = p.src; lb.querySelector("p").textContent = p.caption; lb.classList.add("show") }; }
   else f.innerHTML = '<span class="ph">♥</span>Your photo here';
   f.appendChild(el("figcaption", "", p.caption));
