@@ -193,22 +193,22 @@ var CONFIG = {
  ],
  "photos": [
   {
-   "src": "photos/us1.jpg",
+   "src": "us1.jpg",
    "caption": "Late nights with you",
    "pos": "40% 40%"
   },
   {
-   "src": "photos/us2.jpg",
+   "src": "us2.jpg",
    "caption": "Matching, as always",
    "pos": "50% 40%"
   },
   {
-   "src": "photos/us3.jpg",
+   "src": "us3.jpg",
    "caption": "Graduation day",
    "pos": "50% 22%"
   },
   {
-   "src": "photos/us4.jpg",
+   "src": "us4.jpg",
    "caption": "Our beach nights",
    "pos": "62% 50%"
   }
@@ -253,8 +253,11 @@ var lb = $("#lb");
 C.photos.forEach(function(p, i){
   var f = el("figure", "reveal" + (p.src ? " has" : ""));
   f.style.setProperty("--d", (i % 3) * .12 + "s");
-  if(p.src){ var im = el("img"); im.src = p.src; im.alt = p.caption; im.loading = "lazy"; im.style.objectPosition = p.pos || "center"; f.appendChild(im);
-    f.onclick = function(){ lb.querySelector("img").src = p.src; lb.querySelector("p").textContent = p.caption; lb.classList.add("show") }; }
+  if(p.src){ var im = el("img"); im.alt = p.caption; im.loading = "lazy"; im.style.objectPosition = p.pos || "center";
+    var base = p.src.split("/").pop(), k = 0, tries = [p.src, base, "photos/" + base, base.replace(/\.jpg$/i, ".JPG"), "photos/" + base.replace(/\.jpg$/i, ".JPG")].filter(function(v, j, a){ return a.indexOf(v) === j });
+    im.onerror = function(){ if(++k < tries.length) im.src = tries[k]; };
+    im.src = tries[0]; f.appendChild(im);
+    f.onclick = function(){ lb.querySelector("img").src = im.src; lb.querySelector("p").textContent = p.caption; lb.classList.add("show") }; }
   else f.innerHTML = '<span class="ph">♥</span>Your photo here';
   f.appendChild(el("figcaption", "", p.caption));
   f.addEventListener("mousemove", function(e){
